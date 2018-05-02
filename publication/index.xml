@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Adam Gleave | PhD student @ UC Berkeley</title>
-    <link>http://gleave.me/publication/</link>
+    <link>https://gleave.me/publication/</link>
     <description>Recent content in Publications on Adam Gleave | PhD student @ UC Berkeley</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,19 +12,19 @@
     
     <item>
       <title>Making compression algorithms for Unicode text</title>
-      <link>http://gleave.me/publication/unicode-compression/</link>
+      <link>https://gleave.me/publication/unicode-compression/</link>
       <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://gleave.me/publication/unicode-compression/</guid>
+      <guid>https://gleave.me/publication/unicode-compression/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Firmament: Fast, Centralized Cluster Scheduling at Scale</title>
-      <link>http://gleave.me/publication/firmament/</link>
+      <link>https://gleave.me/publication/firmament/</link>
       <pubDate>Wed, 02 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://gleave.me/publication/firmament/</guid>
+      <guid>https://gleave.me/publication/firmament/</guid>
       <description></description>
     </item>
     

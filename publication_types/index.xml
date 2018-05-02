@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publication_types on Adam Gleave | PhD student @ UC Berkeley</title>
-    <link>http://gleave.me/publication_types/</link>
+    <link>https://gleave.me/publication_types/</link>
     <description>Recent content in Publication_types on Adam Gleave | PhD student @ UC Berkeley</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>1</title>
-      <link>http://gleave.me/publication_types/1/</link>
+      <link>https://gleave.me/publication_types/1/</link>
       <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://gleave.me/publication_types/1/</guid>
+      <guid>https://gleave.me/publication_types/1/</guid>
       <description></description>
     </item>
     

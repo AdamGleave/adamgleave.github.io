@@ -16,11 +16,6 @@
     
   
   
-    
-    
-    <link rel="stylesheet" href="/css/highlight.min.css">
-    
-  
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
@@ -46,17 +41,17 @@
     
   
 
-  <link rel="alternate" href="https://gleave.me/publication_types/1/index.xml" type="application/rss+xml" title="Adam Gleave | PhD student @ UC Berkeley">
-  <link rel="feed" href="https://gleave.me/publication_types/1/index.xml" type="application/rss+xml" title="Adam Gleave | PhD student @ UC Berkeley">
+  <link rel="alternate" href="https://gleave.me/index.xml" type="application/rss+xml" title="Adam Gleave | PhD student @ UC Berkeley">
+  <link rel="feed" href="https://gleave.me/index.xml" type="application/rss+xml" title="Adam Gleave | PhD student @ UC Berkeley">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://gleave.me/publication_types/1/">
+  <link rel="canonical" href="https://gleave.me/publication/2018-multi-task-irl/">
 
   
 
-  <title>1 | Adam Gleave | PhD student @ UC Berkeley</title>
+  <title>Multi-task Maximum Causal Entropy Inverse Reinforcement Learning | Adam Gleave | PhD student @ UC Berkeley</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -138,51 +133,180 @@
   </div>
 </nav>
 
-
-
-
-
-<div class="universal-wrapper">
-
-  <h1>1</h1>
+<div class="pub" itemscope itemtype="http://schema.org/CreativeWork">
 
   
 
-  
-  
-  <div>
-    <h2><a href="https://gleave.me/publication/2018-multi-task-irl/">Multi-task Maximum Causal Entropy Inverse Reinforcement Learning</a></h2>
-    <div class="article-style">
+
+  <div class="container pub-title">
+    <h1 itemprop="name">Multi-task Maximum Causal Entropy Inverse Reinforcement Learning</h1>
+    <span class="pub-authors" itemprop="author">
       
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="https://gleave.me/publication/2018-active-ird/">Active Inverse Reward Design</a></h2>
-    <div class="article-style">
+      Adam Gleave, Oliver Habryka
       
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="https://gleave.me/publication/2017-unicode-compression/">Making compression algorithms for Unicode text</a></h2>
-    <div class="article-style">
+    </span>
+    <span class="pull-right">
       
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="https://gleave.me/publication/2016-firmament/">Firmament: Fast, Centralized Cluster Scheduling at Scale</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgleave.me%2fpublication%2f2018-multi-task-irl%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Multi-task%20Maximum%20Causal%20Entropy%20Inverse%20Reinforcement%20Learning&amp;url=https%3a%2f%2fgleave.me%2fpublication%2f2018-multi-task-irl%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgleave.me%2fpublication%2f2018-multi-task-irl%2f&amp;title=Multi-task%20Maximum%20Causal%20Entropy%20Inverse%20Reinforcement%20Learning"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fgleave.me%2fpublication%2f2018-multi-task-irl%2f&amp;title=Multi-task%20Maximum%20Causal%20Entropy%20Inverse%20Reinforcement%20Learning"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Multi-task%20Maximum%20Causal%20Entropy%20Inverse%20Reinforcement%20Learning&amp;body=https%3a%2f%2fgleave.me%2fpublication%2f2018-multi-task-irl%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
 
-  
 
+    </span>
+  </div>
 
 </div>
+<div class="article-container">
+
+  
+
+  <h3>Abstract</h3>
+  <p class="pub-abstract" itemprop="text">Multi-task Inverse Reinforcement Learning (IRL) is the problem of inferring multiple reward functions from expert demonstrations. Prior work, built on Bayesian IRL, is unable to scale to complex environments due to computational constraints. This paper contributes a formulation of multi-task IRL in the more computationally efficient Maximum Causal Entropy (MCE) IRL framework. Experiments show our approach can perform one-shot imitation learning in a gridworld environment that single-task IRL algorithms need hundreds of demonstrations to solve. We outline preliminary work using meta-learning to extend our method to the function approximator setting of modern MCE IRL algorithms. Evaluating on multi-task variants of common simulated robotics benchmarks, we discover serious limitations of these IRL algorithms, and conclude with suggestions for further work</p>
+
+  
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 pub-row-heading">Type</div>
+        <div class="col-xs-12 col-sm-9">
+          
+          <a href="/publication/#1">
+            Conference proceedings
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="visible-xs space-below"></div>
+  
+
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 pub-row-heading">Publication</div>
+        <div class="col-xs-12 col-sm-9">Workshop on Goal Specifications for Reinforcement Learning at Federated Artificial Intelligence Meeting</div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="visible-xs space-below"></div>
+
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 pub-row-heading">Date</div>
+        <div class="col-xs-12 col-sm-9" itemprop="datePublished">
+          July, 2018
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="visible-xs space-below"></div>
+
+  <div class="row" style="padding-top: 10px">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 pub-row-heading" style="line-height:34px;">Links</div>
+        <div class="col-xs-12 col-sm-9">
+
+          
+
+
+
+
+
+<a class="btn btn-primary btn-outline" href="https://gleave.me/slides/2018-multi-task-irl-poster.pdf">
+  Slides
+</a>
+
+
+
+<a class="btn btn-primary btn-outline" href="https://github.com/HumanCompatibleAI/population-irl/">
+  Code
+</a>
+
+
+
+
+<a class="btn btn-primary btn-outline" href="https://arxiv.org/abs/1805.08882">
+  Paper
+</a>
+
+<a class="btn btn-primary btn-outline" href="https://gleave.me/papers/2018-multi-task-irl.bib">
+  BiBTeX
+</a>
+
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="visible-xs space-below"></div>
+
+  <div class="space-below"></div>
+
+  <div class="article-style"></div>
+
+</div>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://gleave.me/publication/2018-active-ird/"><span
+      aria-hidden="true">&larr;</span> Active Inverse Reward Design</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
 <footer class="site-footer">
   <div class="container">
     <p class="powered-by">
@@ -216,15 +340,6 @@
     
 
     
-    
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
-
-      
-
-      
-
-      <script>hljs.initHighlightingOnLoad();</script>
     
 
     

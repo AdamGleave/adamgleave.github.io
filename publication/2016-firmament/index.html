@@ -46,17 +46,17 @@
     
   
 
-  <link rel="alternate" href="https://gleave.me/publication_types/1/index.xml" type="application/rss+xml" title="Adam Gleave | PhD student @ UC Berkeley">
-  <link rel="feed" href="https://gleave.me/publication_types/1/index.xml" type="application/rss+xml" title="Adam Gleave | PhD student @ UC Berkeley">
+  <link rel="alternate" href="https://gleave.me/index.xml" type="application/rss+xml" title="Adam Gleave | PhD student @ UC Berkeley">
+  <link rel="feed" href="https://gleave.me/index.xml" type="application/rss+xml" title="Adam Gleave | PhD student @ UC Berkeley">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://gleave.me/publication_types/1/">
+  <link rel="canonical" href="https://gleave.me/publication/2016-firmament/">
 
   
 
-  <title>1 | Adam Gleave | PhD student @ UC Berkeley</title>
+  <title>Firmament: Fast, Centralized Cluster Scheduling at Scale | Adam Gleave | PhD student @ UC Berkeley</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -138,51 +138,180 @@
   </div>
 </nav>
 
-
-
-
-
-<div class="universal-wrapper">
-
-  <h1>1</h1>
+<div class="pub" itemscope itemtype="http://schema.org/CreativeWork">
 
   
 
-  
-  
-  <div>
-    <h2><a href="https://gleave.me/publication/2018-multi-task-irl/">Multi-task Maximum Causal Entropy Inverse Reinforcement Learning</a></h2>
-    <div class="article-style">
+
+  <div class="container pub-title">
+    <h1 itemprop="name">Firmament: Fast, Centralized Cluster Scheduling at Scale</h1>
+    <span class="pub-authors" itemprop="author">
       
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="https://gleave.me/publication/2018-active-ird/">Active Inverse Reward Design</a></h2>
-    <div class="article-style">
+      Ionel Gog, Malte Schwarzkopf, Adam Gleave, Robert Watson, Steven Hand
       
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="https://gleave.me/publication/2017-unicode-compression/">Making compression algorithms for Unicode text</a></h2>
-    <div class="article-style">
+    </span>
+    <span class="pull-right">
       
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="https://gleave.me/publication/2016-firmament/">Firmament: Fast, Centralized Cluster Scheduling at Scale</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgleave.me%2fpublication%2f2016-firmament%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Firmament%3a%20Fast%2c%20Centralized%20Cluster%20Scheduling%20at%20Scale&amp;url=https%3a%2f%2fgleave.me%2fpublication%2f2016-firmament%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgleave.me%2fpublication%2f2016-firmament%2f&amp;title=Firmament%3a%20Fast%2c%20Centralized%20Cluster%20Scheduling%20at%20Scale"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fgleave.me%2fpublication%2f2016-firmament%2f&amp;title=Firmament%3a%20Fast%2c%20Centralized%20Cluster%20Scheduling%20at%20Scale"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Firmament%3a%20Fast%2c%20Centralized%20Cluster%20Scheduling%20at%20Scale&amp;body=https%3a%2f%2fgleave.me%2fpublication%2f2016-firmament%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
 
-  
 
+    </span>
+  </div>
 
 </div>
+<div class="article-container">
+
+  
+
+  <h3>Abstract</h3>
+  <p class="pub-abstract" itemprop="text">Centralized datacenter schedulers can make high-quality placement decisions when scheduling tasks in a cluster.  Today, however, high-quality placements come at the cost of high latency at scale, which degrades response time for interactive tasks and reduces cluster utilization.<br/><br/>This paper describes Firmament, a centralized scheduler that scales to over ten thousand machines at subsecond placement latency even though it continuously reschedules all tasks via a min-cost max-flow (MCMF) optimization. Firmament achieves low latency by using multiple MCMF algorithms, by solving the problem incrementally, and via problem-specific optimizations.<br/><br/> Experiments with a Google workload trace from a 12,500-machine cluster show that Firmament improves placement latency by 20× over Quincy, a prior centralized scheduler using the same MCMF optimization.  Moreover, even though Firmament is centralized, it matches the placement latency of distributed schedulers for workloads of short tasks. Finally, Firmament exceeds the placement quality of four widely-used centralized and distributed schedulers on a real-world cluster, and hence improves batch task response time by 6×.</p>
+
+  
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 pub-row-heading">Type</div>
+        <div class="col-xs-12 col-sm-9">
+          
+          <a href="/publication/#1">
+            Conference proceedings
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="visible-xs space-below"></div>
+  
+
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 pub-row-heading">Publication</div>
+        <div class="col-xs-12 col-sm-9">Proceedings of the 12th USENIX Symposium on Operating Systems Design and Implementation</div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="visible-xs space-below"></div>
+
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 pub-row-heading">Date</div>
+        <div class="col-xs-12 col-sm-9" itemprop="datePublished">
+          November, 2016
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="visible-xs space-below"></div>
+
+  <div class="row" style="padding-top: 10px">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 pub-row-heading" style="line-height:34px;">Links</div>
+        <div class="col-xs-12 col-sm-9">
+
+          
+
+
+
+
+
+
+
+<a class="btn btn-primary btn-outline" href="https://github.com/camsas/firmament">
+  Code
+</a>
+
+
+
+<a class="btn btn-primary btn-outline" href="http://firmament.io/">
+  Project
+</a>
+
+
+<a class="btn btn-primary btn-outline" href="https://www.usenix.org/system/files/conference/osdi16/osdi16-gog.pdf">
+  Paper
+</a>
+
+<a class="btn btn-primary btn-outline" href="https://gleave.me/papers/2016-firmament.bib">
+  BiBTeX
+</a>
+
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="visible-xs space-below"></div>
+
+  <div class="space-below"></div>
+
+  <div class="article-style"></div>
+
+</div>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+
+    
+    <li class="next"><a href="https://gleave.me/publication/2017-unicode-compression/">Making compression algorithms for Unicode text <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
 <footer class="site-footer">
   <div class="container">
     <p class="powered-by">

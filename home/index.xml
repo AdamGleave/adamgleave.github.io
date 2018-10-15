@@ -8,7 +8,37 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Adam Gleave</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/home/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://gleave.me/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://gleave.me/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://gleave.me/home/about/</guid>
+      <description>Biography I am an artificial intelligence (AI) PhD student at UC Berkeley, supervised by Stuart Russell. My goal is to develop techniques necessary for advanced automated systems to verifiably act according to human preferences, even in situations unanticipated by their designer. I am particularly interested in improving methods for value learning and preference elicitation, such as inverse reinforcement learning.
+I work closely with the Center for Human-Compatible AI, a cross-disciplinary research centre.</description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>https://gleave.me/home/publications/</link>
+      <pubDate>Thu, 07 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://gleave.me/home/publications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://gleave.me/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://gleave.me/home/contact/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

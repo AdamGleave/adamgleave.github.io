@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Adam Gleave</copyright>
-    <lastBuildDate>Sun, 15 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gleave.me/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Inverse Reinforcement Learning for Video Games</title>
+      <link>https://gleave.me/publication/2018-irl-video-games/</link>
+      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gleave.me/publication/2018-irl-video-games/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Multi-task Maximum Causal Entropy Inverse Reinforcement Learning</title>
@@ -31,7 +40,7 @@
     </item>
     
     <item>
-      <title>Making compression algorithms for Unicode text</title>
+      <title>Making Compression Algorithms for Unicode Text</title>
       <link>https://gleave.me/publication/2017-unicode-compression/</link>
       <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
       

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Adam Gleave | PhD student @ UC Berkeley</title>
+    <link>https://gleave.me/author/</link>
+      <atom:link href="https://gleave.me/author/index.xml" rel="self" type="application/rss+xml" />
+    <description>Adam Gleave | PhD student @ UC Berkeley</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Adam Gleave</copyright>
+    <image>
+      <url>https://gleave.me/img/portrait.jpg</url>
+      <title>Adam Gleave | PhD student @ UC Berkeley</title>
+      <link>https://gleave.me/author/</link>
+    </image>
+    
+    <item>
+      <title>Multi-task Maximum Causal Entropy Inverse Reinforcement Learning</title>
+      <link>https://gleave.me/publication/2018-06-multi-task-irl/</link>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://gleave.me/publication/2018-06-multi-task-irl/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

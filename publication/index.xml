@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Adam Gleave | PhD student @ UC Berkeley</title>
+    <title>Publications | Adam Gleave | PhD student @ UC Berkeley</title>
     <link>https://gleave.me/publication/</link>
-    <description>Recent content in Publications on Adam Gleave | PhD student @ UC Berkeley</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2017 Adam Gleave</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://gleave.me/publication/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://gleave.me/publication/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Adam Gleave</copyright>
+    <image>
+      <url>https://gleave.me/img/portrait.jpg</url>
+      <title>Publications</title>
+      <link>https://gleave.me/publication/</link>
+    </image>
     
     <item>
       <title>Quantifying Differences in Reward Functions</title>
       <link>https://gleave.me/publication/2020-06-quantifying-differences/</link>
       <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://gleave.me/publication/2020-06-quantifying-differences/</guid>
       <description></description>
     </item>
@@ -25,7 +24,6 @@
       <title>Adversarial Policies: Attacking Deep Reinforcement Learning</title>
       <link>https://gleave.me/publication/2020-04-adversarial-policies/</link>
       <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://gleave.me/publication/2020-04-adversarial-policies/</guid>
       <description></description>
     </item>
@@ -34,7 +32,6 @@
       <title>Inverse Reinforcement Learning for Video Games</title>
       <link>https://gleave.me/publication/2018-12-irl-video-games/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://gleave.me/publication/2018-12-irl-video-games/</guid>
       <description></description>
     </item>
@@ -43,7 +40,6 @@
       <title>Multi-task Maximum Causal Entropy Inverse Reinforcement Learning</title>
       <link>https://gleave.me/publication/2018-06-multi-task-irl/</link>
       <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://gleave.me/publication/2018-06-multi-task-irl/</guid>
       <description></description>
     </item>
@@ -52,7 +48,6 @@
       <title>Active Inverse Reward Design</title>
       <link>https://gleave.me/publication/2018-06-active-ird/</link>
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://gleave.me/publication/2018-06-active-ird/</guid>
       <description></description>
     </item>
@@ -61,7 +56,6 @@
       <title>Making Compression Algorithms for Unicode Text</title>
       <link>https://gleave.me/publication/2017-unicode-compression/</link>
       <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://gleave.me/publication/2017-unicode-compression/</guid>
       <description></description>
     </item>
@@ -70,7 +64,6 @@
       <title>Firmament: Fast, Centralized Cluster Scheduling at Scale</title>
       <link>https://gleave.me/publication/2016-firmament/</link>
       <pubDate>Wed, 02 Nov 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://gleave.me/publication/2016-firmament/</guid>
       <description></description>
     </item>

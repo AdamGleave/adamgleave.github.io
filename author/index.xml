@@ -13,10 +13,18 @@
     </image>
     
     <item>
-      <title>Multi-task Maximum Causal Entropy Inverse Reinforcement Learning</title>
-      <link>https://gleave.me/publication/2018-06-multi-task-irl/</link>
-      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>https://gleave.me/publication/2018-06-multi-task-irl/</guid>
+      <title>Quantifying Differences in Reward Functions</title>
+      <link>https://gleave.me/publication/2020-06-quantifying-differences/</link>
+      <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://gleave.me/publication/2020-06-quantifying-differences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Adversarial Policies: Attacking Deep Reinforcement Learning</title>
+      <link>https://gleave.me/publication/2020-04-adversarial-policies/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://gleave.me/publication/2020-04-adversarial-policies/</guid>
       <description></description>
     </item>
     

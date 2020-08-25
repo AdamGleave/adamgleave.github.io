@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Adam Gleave">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="LaTeX is the typesetting system of choice in most STEM fields. Yet even experienced LaTeX users often fall prey to many gotchas, or fail to exploit some powerful aspects of the language. In this document, I collect together *design patterns* to help efficiently produce clear LaTeX documents.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://gleave.me/post/latex-design-patterns/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106093705-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-106093705-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://gleave.me/post/latex-design-patterns/">
+
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@ARGleave">
+  <meta property="twitter:creator" content="@ARGleave">
+  
+  <meta property="og:site_name" content="Adam Gleave | PhD student @ UC Berkeley">
+  <meta property="og:url" content="https://gleave.me/post/latex-design-patterns/">
+  <meta property="og:title" content="Writing Beautifully in LaTeX | Adam Gleave | PhD student @ UC Berkeley">
+  <meta property="og:description" content="LaTeX is the typesetting system of choice in most STEM fields. Yet even experienced LaTeX users often fall prey to many gotchas, or fail to exploit some powerful aspects of the language. In this document, I collect together *design patterns* to help efficiently produce clear LaTeX documents."><meta property="og:image" content="https://gleave.me/img/portrait.jpg">
+  <meta property="twitter:image" content="https://gleave.me/img/portrait.jpg"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-08-24T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-08-24T17:49:09-07:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gleave.me/post/latex-design-patterns/"
+  },
+  "headline": "Writing Beautifully in LaTeX",
+  
+  "datePublished": "2020-08-24T00:00:00Z",
+  "dateModified": "2020-08-24T17:49:09-07:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Adam Gleave"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Adam Gleave | PhD student @ UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gleave.me/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "LaTeX is the typesetting system of choice in most STEM fields. Yet even experienced LaTeX users often fall prey to many gotchas, or fail to exploit some powerful aspects of the language. In this document, I collect together *design patterns* to help efficiently produce clear LaTeX documents."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Writing Beautifully in LaTeX | Adam Gleave | PhD student @ UC Berkeley</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Adam Gleave | PhD student @ UC Berkeley</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Adam Gleave | PhD student @ UC Berkeley</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/CV.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Writing Beautifully in LaTeX</h1>
+
+  
+  <p class="page-subtitle">Design Patterns for Composing LaTeX Documents</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span class="font-weight-bold"><a href="/author/" >Adam Gleave</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Aug 24, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    10 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>
+<a href="https://www.latex-project.org/" target="_blank" rel="noopener">LaTeX</a> is the typesetting system of choice in most STEM fields &ndash; indeed, many computer science venues <em>only</em> accept submissions produced by LaTeX.
+Unlike 
+<a href="https://en.wikipedia.org/wiki/WYSIWYG" target="_blank" rel="noopener">What You See Is What You Get</a> (WYSIWYG) word processors, in LaTeX one is writing source code that LaTeX will then compile into a document, such as a PDF.
+Once mastered, LaTeX can be more flexible and efficient than alternatives, however it comes with a steep learning curve.
+There exist 
+<a href="https://en.wikibooks.org/wiki/LaTeX/Introduction" target="_blank" rel="noopener">many</a> 
+<a href="https://en.wikibooks.org/wiki/LaTeX/Introduction" target="_blank" rel="noopener">excellent</a> 
+<a href="https://www.andy-roberts.net/writing/latex" target="_blank" rel="noopener">introductions</a> to LaTeX.
+However, I&rsquo;ve found that even experienced LaTeX users often fall prey to many gotchas, or fail to exploit some powerful aspects of the language.</p>
+<p>This document aims to collect together <em>
+<a href="https://en.wikipedia.org/wiki/Software_design_pattern" target="_blank" rel="noopener">design patterns</a></em> in LaTeX that enable efficient and clear writing, and warn of <em>anti-patterns</em> which interfere with this goal.
+Take these patterns as suggestions, not strict rules.
+What may be a pattern in one document can be an anti-pattern in another: for example, defining macros for notation may be beneficial in a PhD thesis, but is likely overkill for an extended abstract.
+Furthermore, while I anticipate these suggestions to be applicable to many LaTeX users, most of my experience has been in preparing papers for machine learning and computer science.
+When in doubt, defer to the publication norms of the field you operate in.</p>
+<p>I am indebted to my advisors throughout the years patiently correcting my own writing, especially 
+<a href="https://jan.leike.name/" target="_blank" rel="noopener">Jan Leike</a> and 
+<a href="http://cs.brown.edu/people/malte/" target="_blank" rel="noopener">Malte Schwarzkopf</a>.
+I would also like to thank 
+<a href="http://decodyng.com/" target="_blank" rel="noopener">Cody Wild</a> and others for contributing their own suggestions to this list.</p>
+<h1 id="latex-as-software-engineering">LaTeX As Software Engineering</h1>
+<p>LaTeX is highly extensible (indeed, the language is 
+<a href="https://web.archive.org/web/20160110102145/http://en.literateprograms.org/Turing_machine_simulator_%28LaTeX%29" target="_blank" rel="noopener">Turing complete</a>).
+This suggests treating writing LaTeX documents similar to software engineering.
+The analogy is not perfect: software must often be maintained for decades or more, whereas hopefully your paper will be published sooner than this!
+Nonetheless, there are some similar design patterns.</p>
+<p><strong>
+<a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank" rel="noopener">Don&rsquo;t Repeat Yourself</a> (DRY)</strong>: Define LaTeX 
+<a href="https://en.wikibooks.org/wiki/LaTeX/Macros" target="_blank" rel="noopener">macros</a> for repeated functionality. A common example of repeated LaTeX code is in mathematical notation. Perhaps you start by writing your document using $P$ everywhere for probability. One day, you decide $\mathbb{P}$ would be clearer. A find-and-replace of every occurrence of <code>P</code> in your document would have many false positives. You are left painstakingly working through your document and, since to err is human, you will likely end up with inconsistent notation. Instead, save yourself some time &ndash; define <code>\newcommand{\probability}{P}</code> at the start, and you can easily change notation later to your heart&rsquo;s content.</p>
+<p>Another source of duplicated code are theorems that must be presented multiple times in the document: for example, the statement in the main body and a proof in an appendix. Instead, use tools to recall an earlier statement of the 
+<a href="https://tex.stackexchange.com/questions/51286/recalling-a-theorem" target="_blank" rel="noopener">theorem</a>. Similarly, if you have boilerplate duplicated across figure captions (for example, the same legend), define a macro to consolidate it.</p>
+<p><strong>Pay Attention To Errors and Warnings</strong>: The LaTeX compiler issues warnings for a variety of common problems, such as citations to undefined references. I encourage immediately fixing these warnings or, if they are spurious, 
+<a href="https://tex.stackexchange.com/questions/66958/how-do-you-suppress-specific-warnings-generated-by-pdflatex" target="_blank" rel="noopener">suppressing them</a>. Having zero warnings by default makes it immediately noticeable when an edit has caused a new issue, enabling you to fix the problem immediately when the code is fresh in your mind.</p>
+<p>Errors should always be fixed immediately. Unfortunately, the otherwise excellent 
+<a href="https://www.overleaf.com/" target="_blank" rel="noopener">Overleaf</a> cloud IDE encourages sloppy practices here, by allowing LaTeX to continue compiling a document after an error. The problem is the LaTeX compiler is often unable to recover from an error, causing the rest of the parse tree to be incorrect, and causing far-reaching and hard to predict effects. Fix errors as they occur so you can focus on <em>writing</em> and not debugging.</p>
+<p><strong>Automated Checks</strong>: In a similar vein, use automated checks to catch common mistakes. This doesn&rsquo;t have to be limited to code &ndash; you can also use or develop tools to automatically check your writing. A spellchecker is a simple example, but you can be more creative: for example, Matt Might wrote shell scripts to check for 
+<a href="http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/" target="_blank" rel="noopener">passive voice, weasel words and lexical illusions</a>.</p>
+<p><strong>Use and Master an IDE</strong>: Find an 
+<a href="https://en.wikipedia.org/wiki/Integrated_development_environment" target="_blank" rel="noopener">integrated development environment</a> (IDE) for LaTeX that works for you. I like to use 
+<a href="https://www.overleaf.com/" target="_blank" rel="noopener">Overleaf</a> when collaboratively editing due to its real-time synchronization and commenting. However, I find Overleaf to be lacking in features and compile notably slower than on a local machine, so I also use the 
+<a href="https://plugins.jetbrains.com/plugin/9473-texify-idea" target="_blank" rel="noopener">TeXiFy IDEA</a> plugin for IntelliJ. There are many other excellent IDEs, though &ndash; the main thing is to pick one and master it.</p>
+<p><strong>Use Source Control</strong>: This should go without saying, but do use a version control system like 
+<a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a> and regularly push changes. Sooner or later, you <em>will</em> delete or otherwise corrupt your files, and will be very glad you have this. I also find it cognitively liberating: I can make substantial edits, knowing it will be easy to revert to a previous version if I want. I find this particularly valuable when working on multiple versions of a document at once &ndash; for example, a workshop and conference version &ndash; since I can make edits on multiple branches and merge them. If you use Overleaf then you may be satisfied with it&rsquo;s built-in version control, however I still prefer 
+<a href="https://www.overleaf.com/learn/how-to/How_do_I_push_a_new_project_to_Overleaf_via_git%3F" target="_blank" rel="noopener">using Git with Overleaf</a> since this offers more powerful version control and allows one to make edits both locally and in the cloud.</p>
+<h1 id="mathematics">Mathematics</h1>
+<p>LaTeX has excellent support for typesetting mathematical formulas, and so is widely used in mathematics and related disciplines.</p>
+<p><strong>Punctuate Your Math</strong>: Mathematics forms an integral part of your text, and should be punctuated accordingly. For example, if your sentence ends with an equation, the equation should end with a period. It can often be helpful to imagine punctuating everything as if it was inline math (<code>$...$</code>), even if you are using display math (<code>$$...$$</code> or <code>\begin{equation}...\end{equation}</code>). 
+<a href="https://tex.stackexchange.com/questions/7542/for-formal-articles-should-a-displayed-equation-be-followed-by-a-punctuation-to" target="_blank" rel="noopener">Stack Exchange</a> has a good discussion on this.</p>
+<p><strong>Use Detexify</strong>: More a tip than a design pattern. If you know how a symbol is written but do not know the LaTeX command to produce it, you can sketch the symbol on 
+<a href="http://detexify.kirelabs.org/classify.html" target="_blank" rel="noopener">Detexify</a> to find it.</p>
+<h1 id="typography">Typography</h1>
+<p>LaTeX encourages writers to specify the <em>structure</em> of the document, and leave formatting details to LaTeX. This usually works well, however there are some common problems that can mislead LaTeX into producing the wrong output.</p>
+<p><strong>
+<a href="https://tex.stackexchange.com/questions/1980/emph-or-textit" target="_blank" rel="noopener">Be Semantic</a></strong>: If you want to emphasize some text, use <code>\emph{}</code>. Do <em>not</em> use <code>\textit{}</code>. Though they may seem to produce the same effect of italicized text, <code>\emph{}</code> will automatically switch between italic and Roman: for example, <code>\emph{emphasis \emph{nested} works}'</code> produces &ldquo;<em>emphasis</em> nested <em>works</em>&rdquo; whereas <code>\textit{italics \textit{is} idempotent}</code> produces &ldquo;<em>italics is idempotent</em>&rdquo;. This behaviour of <code>\emph{}</code> is useful since environments (such as <code>\begin{theorem}</code>) may italicize blocks of text, in which case Roman text stands out from the italic surroundings.</p>
+<p><strong>
+<a href="https://tex.stackexchange.com/questions/2229/is-a-period-after-an-abbreviation-the-same-as-an-end-of-sentence-period" target="_blank" rel="noopener">Spacing after abbreviation periods</a></strong>: LaTeX adds extra space between sentences. This improves readability, but LaTeX can misinterpret periods in abbreviations as being the end of a sentence: for example, in <code>e.g. this</code> LaTeX will insert a sentence space after <code>e.g.</code>. To avoid this problem, use <code>\ </code> to instruct LaTeX to use a regular space: <code>e.g.\ this</code>. More rarely, LaTeX may incorrectly believe a period 
+<a href="https://tex.stackexchange.com/questions/22561/what-is-the-proper-use-of-i-e-backslash-at" target="_blank" rel="noopener">does not end a sentence</a>, for example after a capital letter: in this case, you can force it using <code>\@</code> as in <code>LaTeX was invented in the US\@.</code></p>
+<p><strong>
+<a href="https://www.andy-roberts.net/writing/latex/formatting" target="_blank" rel="noopener">Use ` and ' Quote Marks</a></strong>: Use <code>`</code> and <code>'</code> at the left and right end of single quotes, and <code>``</code> and <code>''</code> for double quotes. This allows LaTeX to generate appropriate quotation characters. Be consistent with single vs double quotes within a document.</p>
+<h1 id="figures">Figures</h1>
+<p>LaTeX has excellent support for figures, both in the form of 
+<a href="https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions" target="_blank" rel="noopener">float</a> environments and packages to 
+<a href="https://www.overleaf.com/learn/latex/Inserting_Images" target="_blank" rel="noopener">include external graphics</a> or even 
+<a href="https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ" target="_blank" rel="noopener">generate vector figures</a> inside your document.</p>
+<p><strong>Use Vector Graphics</strong>: Wherever possible, generate figures as 
+<a href="https://en.wikipedia.org/wiki/Vector_graphics" target="_blank" rel="noopener">vector graphics</a> such as SVG or PDF rather than 
+<a href="https://en.wikipedia.org/wiki/Raster_graphics" target="_blank" rel="noopener">raster</a> graphics formats such as PNG. Vector graphics can be visualized at arbitrarily high resolutions without any loss of fidelity &ndash; this will allow your readers to zoom in on plots to better read them, and print your paper in a high quality. They also tend to be smaller than saving the file as raster graphics. It is almost always possible to save plots and schematic diagrams as vector graphics. Raster graphics are appropriate for figures such as photographs or screenshots.</p>
+<p><strong>Match the Paper Style</strong>: Even though you will often be generating your figures outside of LaTeX in a package like 
+<a href="https://matplotlib.org/" target="_blank" rel="noopener">matplotlib</a>, to the reader your figures are an integral part of the paper. Accordingly, you should use the same font and &ndash; where possible &ndash; font size as in the rest of the paper. It&rsquo;s particularly important to save your figures with the same geometric dimensions as they will be embedded in the paper. While LaTeX does support rescaling included graphics, this will make it impossible to match font sizes exactly. Moreover, many packages like <code>matplotlib</code> will adjust the figure based on the size, adding more tick labels when the figure is larger &ndash; giving it the right dimensions will help optimize the figure for clarity at the target size.</p>
+<p><strong>Make each Figure Self Contained</strong>: Readers will often skip ahead to figures without reading all the context, or will have forgotten some of the relevant context by the time they get to your figure. As far as practical, make each figure comprehensible in isolation. In particular, include clear axis labels, a legend and specify any extra information needed to understand the figure in the caption. Some people go as far as to aim for the key points of their paper to be understood <em>just</em> by reading the figures and captions!</p>
+<h1 id="citations-and-references">Citations and References</h1>
+<p>As LaTeX was designed around the needs of academic documents, it has extensive support for citations.
+However, there are a number of subtle details it is important to get right.</p>
+<p><strong>Use BibLaTeX Where Possible</strong>: 
+<a href="https://ctan.org/pkg/biblatex" target="_blank" rel="noopener">BibLaTeX</a> (
+<a href="https://www.overleaf.com/learn/latex/bibliography_management_with_biblatex" target="_blank" rel="noopener">guide</a>) is the most modern approach to bibliography management in LaTeX, designed as a replacement for 
+<a href="http://www.bibtex.org/" target="_blank" rel="noopener">BibTeX</a> (
+<a href="https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex" target="_blank" rel="noopener">guide</a>). BibLaTeX adds many useful features, such as new 
+<a href="https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Entry_and_field_types_in_.bib_files" target="_blank" rel="noopener">entry types</a> like <code>@online</code> and localization in several languages. However, often you won&rsquo;t have a choice &ndash; if you are submitting to a conference or journal, their LaTeX style file will usually specify a particular bibliography manager.</p>
+<p><strong>Use The Right Citation Command</strong>: In particular, it is important to distinguish between <em>parenthetical</em> citations (Gleave et al, 2020) v.s. <em>in-text</em> citations, claims Gleave et al (2020). For parenthetical citations, use <code>\parencite</code> (BibLaTeX) or <code>\citep</code> (BibTeX); for in-text citations, use <code>\textcite</code> (BibLaTeX) or <code>\citet</code> (BibTeX). Avoid nested brackets: use <code>\citep[see]{gleave2020}</code> to produce &ldquo;(see Gleave et al, 2020)&rdquo;, rather than <code>(see~\citep{gleave2020})</code> producing &ldquo;(see (Gleave et al, 2020))&rdquo;.</p>
+<p><strong>Use Non-Breaking Spaces</strong>: Citations should be on the same line as the word or sentence they are attached to, so use the 
+<a href="https://en.wikibooks.org/wiki/LaTeX/FAQ#Non-breaking_spaces" target="_blank" rel="noopener">non-breaking space</a> <code>~</code> to instruct LaTeX to avoid orphaning the citation, as in <code>Knuth developed LaTeX~\citep{latex}</code>.</p>
+<p><strong>Bibliography Management</strong>: A sloppy bibliography is often symptomatic of a sloppy paper and, rightly or wrongly, readers (and reviewers!) may judge you for this. A common problem is LaTeX reformatting the capitalization of paper titles. This is usually desirable, since it ensures consistency across bibliography entries. However, it is undesirable when the title includes an acronym: these should be guarded with <code>{}</code>, as in <code>{DQN}</code>. It is also important to choose the correct 
+<a href="https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX" target="_blank" rel="noopener">entry type</a>, for example <code>@inproceedings</code> for a conference, <code>@article</code> for a journal and <code>@misc</code> for preprints. Finally, it is essential to be consistent in your bibliography. Author names should always be spelt the same way (look out for middle initials, abbreviations); conference and journal names should always be abbreviated or spelt out in full; you should always include 
+<a href="https://en.wikipedia.org/wiki/Digital_object_identifier" target="_blank" rel="noopener">DOI</a> links or never.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://gleave.me/post/latex-design-patterns/&amp;text=Writing%20Beautifully%20in%20LaTeX" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://gleave.me/post/latex-design-patterns/&amp;t=Writing%20Beautifully%20in%20LaTeX" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Writing%20Beautifully%20in%20LaTeX&amp;body=https://gleave.me/post/latex-design-patterns/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://gleave.me/post/latex-design-patterns/&amp;title=Writing%20Beautifully%20in%20LaTeX" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Writing%20Beautifully%20in%20LaTeX%20https://gleave.me/post/latex-design-patterns/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://gleave.me/post/latex-design-patterns/&amp;title=Writing%20Beautifully%20in%20LaTeX" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/author/avatar_hu123582b1be4cfa4bab50159ee50316d6_12964_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://gleave.me/" ></a></h5>
+      <h6 class="card-subtitle">PhD Candidate in Artificial Intelligence</h6>
+      <p class="card-text">My research interests include value learning and robustness of deep RL.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:adam@gleave.me" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/ARGleave" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=lBunDH0AAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/AdamGleave" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/CV.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.c816d323c3a55093dae0829b44ea1ca8.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2020 Adam Gleave &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
